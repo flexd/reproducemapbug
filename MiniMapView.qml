@@ -7,6 +7,7 @@ import QtPositioning
 Page {
     id: root
     signal openFullMap()
+    signal openOsmMap()
 
     header: ToolBar {
         Label {
@@ -51,9 +52,15 @@ Page {
         }
 
         Button {
-            text: "Open Full Map"
+            text: "Open Full Map (MapLibre)"
             Layout.alignment: Qt.AlignHCenter
             onClicked: root.openFullMap()
+        }
+
+        Button {
+            text: "Open Full Map (OSM plugin)"
+            Layout.alignment: Qt.AlignHCenter
+            onClicked: root.openOsmMap()
         }
 
         Item { Layout.fillHeight: true }

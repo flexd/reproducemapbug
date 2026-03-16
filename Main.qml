@@ -18,12 +18,20 @@ ApplicationWindow {
         id: miniMapPage
         MiniMapView {
             onOpenFullMap: stackView.push(fullMapPage)
+            onOpenOsmMap: stackView.push(osmMapPage)
         }
     }
 
     Component {
         id: fullMapPage
         FullMapView {
+            onBack: stackView.pop()
+        }
+    }
+
+    Component {
+        id: osmMapPage
+        OsmMapView {
             onBack: stackView.pop()
         }
     }

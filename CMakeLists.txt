@@ -21,6 +21,7 @@ qt_add_qml_module(reproducemapbug
         Main.qml
         MiniMapView.qml
         FullMapView.qml
+        OsmMapView.qml
 )
 
 target_link_libraries(reproducemapbug PRIVATE
