@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QQuickWindow>
 
 int main(int argc, char *argv[])
@@ -8,7 +9,11 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
+    const QString styleUrl = qEnvironmentVariable("STYLE_URL",
+        QStringLiteral("https://demotiles.maplibre.org/style.json"));
+
     QQmlApplicationEngine engine;
+    engine.rootContext()->setContextProperty("styleUrl", styleUrl);
     QObject::connect(
         &engine, &QQmlApplicationEngine::objectCreationFailed, &app,
         []() { QCoreApplication::exit(-1); }, Qt::QueuedConnection);

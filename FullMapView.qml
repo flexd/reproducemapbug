@@ -35,7 +35,7 @@ Page {
             name: "maplibre"
             PluginParameter {
                 name: "maplibre.map.styles"
-                value: "file:///home/kberdal/src/reproducemapbug/style-raster.json"
+                value: styleUrl
             }
         }
     }
