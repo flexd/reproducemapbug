@@ -8,6 +8,7 @@ Page {
     id: root
     signal openFullMap()
     signal openOsmMap()
+    signal openVyTrains()
 
     header: ToolBar {
         Label {
@@ -61,6 +62,12 @@ Page {
             text: "Open Full Map (OSM plugin)"
             Layout.alignment: Qt.AlignHCenter
             onClicked: root.openOsmMap()
+        }
+
+        Button {
+            text: "🚆 Vy Live Trains"
+            Layout.alignment: Qt.AlignHCenter
+            onClicked: root.openVyTrains()
         }
 
         Item { Layout.fillHeight: true }

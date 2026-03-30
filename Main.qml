@@ -19,6 +19,7 @@ ApplicationWindow {
         MiniMapView {
             onOpenFullMap: stackView.push(fullMapPage)
             onOpenOsmMap: stackView.push(osmMapPage)
+            onOpenVyTrains: stackView.push(vyTrainPage)
         }
     }
 
@@ -32,6 +33,13 @@ ApplicationWindow {
     Component {
         id: osmMapPage
         OsmMapView {
+            onBack: stackView.pop()
+        }
+    }
+
+    Component {
+        id: vyTrainPage
+        VyTrainView {
             onBack: stackView.pop()
         }
     }
